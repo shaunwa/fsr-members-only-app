@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes } from './navigation';
+import { Routes } from './Routes';
 import { useUser } from './auth';
 
 function App() {

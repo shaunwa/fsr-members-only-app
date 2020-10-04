@@ -2,12 +2,14 @@ import { useState, useEffect } from 'react';
 import firebase from 'firebase/app';
 
 export const useUserGroups = () => {
-    const [groups, setGroups] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [userGroups, setUserGroups] = useState([]);
 
     const loadGroups = async () => {
         const user = firebase.auth().currentUser;
         if (!user) {
-            setGroups([]);
+            setUserGroups([]);
+            setIsLoading(false);
             return;
         }
 
@@ -17,12 +19,13 @@ export const useUserGroups = () => {
             }
         });
         const groups = await response.json();
-        setGroups(groups);
+        setUserGroups(groups);
+        setIsLoading(isLoading);
     }
 
     useEffect(() => {
         loadGroups();
     }, []);
 
-    return groups;
+    return { isLoading, userGroups };
 }

@@ -56,6 +56,11 @@ input, select {
   margin: 8px;
 }
 
+.logged-in-as {
+  float: right;
+  margin-right: 16px;
+}
+
 .sign-out-button {
   float: right;
 }
@@ -67,11 +72,18 @@ input, select {
 
 .section-heading {
   border-bottom: 1px solid black;
-  padding: 16px;
+  padding-bottom: 16px;
 }
 
 .list-item {
+  align-items: center;
   border-bottom: 1px solid #ddd;
+  display: flex;
+  padding: 16px;
+}
+
+.list-item-data {
+  flex: 1;
 }
 
 .new-message-form {
@@ -85,4 +97,23 @@ input, select {
 
 .new-message-form button {
   flex: 1;
+}
+
+.error-message {
+  background-color: #ffccbb;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.full-width {
+  display: block;
+  width: 100%;
+}
+
+.space-before {
+  margin-top: 16px;
+}
+
+.space-after {
+  margin-bottom: 16px;
 }

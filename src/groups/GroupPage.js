@@ -32,8 +32,6 @@ export const GroupPage = () => {
         setRequests(updatedRequests);
     }
 
-    console.log({ user, group });
-
     return (
         <div className="centered-container">
             <h1>{group.name}</h1>

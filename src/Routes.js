@@ -1,13 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { SignInPage } from '../auth';
+import { SignInPage, PrivateRoute } from './auth';
 import {
     CreateGroupPage,
     GroupPage,
     GroupsListPage,
-} from '../groups';
-import { NavBar } from './NavBar';
-import { PrivateRoute } from './PrivateRoute';
+} from './groups';
+import { NavBar } from './navigation';
 
 const routes = [{
     path: '/',
@@ -30,7 +29,7 @@ const routes = [{
 export const Routes = ({ isLoading, user }) => {
     return (
         <Router>
-            <NavBar />
+            <NavBar user={user} />
             <Switch>
             {routes.map((route, index) => {
                 const RouteType = route.private

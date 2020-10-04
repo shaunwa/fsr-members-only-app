@@ -13,4 +13,4 @@ export const PrivateRoute = ({ isAuthed, isLoading, ...props }) => {
     return (
       <Route {...props} />
     );
-  }
+}

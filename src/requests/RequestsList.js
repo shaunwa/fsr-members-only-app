@@ -3,7 +3,7 @@ import { RequestsListItem } from './RequestsListItem';
 
 export const RequestsList = ({ requests, onAccept, onReject }) => (
     <>
-    <h2>Join Requests</h2>
+    <h2 className="section-heading">Join Requests</h2>
     {requests.length > 0
         ? (
             requests.map(request => (
